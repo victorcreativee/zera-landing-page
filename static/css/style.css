@@ -1,54 +1,105 @@
-
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
 .hero-section {
-  background-color: #222;
+  background-color: #0d1117;
   color: white;
-  padding: 80px 20px;
+  padding: 100px 0;
+  text-align: center;
 }
+
 .hero-title {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
+
 .hero-subtitle {
   font-size: 1.2em;
   margin-bottom: 30px;
 }
-.btn {
-  background-color: #007bff;
+
+.get-started-btn {
+  background-color: #2ea44f;
   color: white;
-  padding: 12px 24px;
+  padding: 12px 25px;
+  border-radius: 5px;
   text-decoration: none;
-  border-radius: 4px;
+  font-weight: bold;
 }
-.features-section, .about-section {
-  background: white;
-  padding: 60px 20px;
+
+.features-section {
+  padding: 80px 0;
+  background-color: #ffffff;
 }
+
 .section-title {
   font-size: 2em;
   margin-bottom: 40px;
 }
+
 .feature-grid {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .feature-card {
-  max-width: 300px;
+  background: #f1f3f5;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  width: 280px;
   text-align: center;
 }
+
 .feature-card img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  margin-bottom: 15px;
 }
-.about-centered {
-  max-width: 700px;
-  margin: auto;
+
+.about-section {
+  background-color: #e9ecef;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.about-description {
+  max-width: 800px;
+  margin: 15px auto;
+  line-height: 1.6;
+}
+
+.social-links {
+  padding: 0;
+  list-style: none;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
 }
