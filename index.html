@@ -1,81 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZERA Platform – Honest Reviews that Empower</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
 
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <img src="assets/logo.png" alt="ZERA Logo" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#github">GitHub</a></li>
-        <li><a href="https://zera-platform-demo.netlify.app" class="btn-link" target="_blank">Launch App</a></li>
-      </ul>
-    </nav>
-  </header>
+{% extends 'base.html' %}
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>ZERA Platform</h1>
-      <p>Empowering users to shape better products through honest feedback.</p>
-      <a href="https://zera-platform-demo.netlify.app" class="btn-primary" target="_blank">Try the Demo</a>
-    </div>
-    <img src="assets/cover.jpg" alt="Cover Image" class="cover-img" />
-  </section>
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+{% endblock %}
 
-  <!-- Features Section -->
-  <section class="features" id="features">
-    <h2>Key Features</h2>
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center">
+  <div class="container">
+    <h1 class="hero-title">Discover Honest Product Insights</h1>
+    <p class="hero-subtitle">Empowering users to shape better products through real feedback.</p>
+    <a href="{{ url_for('auth.choose_role') }}" class="btn get-started-btn">Get Started</a>
+    
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="container text-center">
+    <h2 class="section-title">Why Choose ZERA?</h2>
     <div class="feature-grid">
-      <div class="feature">
-        <img src="assets/feature1.jpg" alt="Authentic Reviews">
-        <h3>Authentic Reviews</h3>
-        <p>Real voices sharing honest experiences, helping brands grow.</p>
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="Authentic Reviews">
+        <h5 class="feature-title">Authentic Reviews</h5>
+        <p class="feature-description">Real voices sharing honest experiences, helping brands grow.</p>
       </div>
-      <div class="feature">
-        <img src="assets/feature2.jpg" alt="Rewards">
-        <h3>Earn Rewards</h3>
-        <p>Review and earn—simple, engaging, and rewarding.</p>
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/feature2.jpg') }}" alt="Reward System">
+        <h5 class="feature-title">Earn Rewards</h5>
+        <p class="feature-description">Review and earn—simple, engaging, and rewarding.</p>
       </div>
-      <div class="feature">
-        <img src="assets/feature3.jpg" alt="Community">
-        <h3>Vibrant Community</h3>
-        <p>Connect with others shaping product experiences globally.</p>
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/feature3.jpg') }}" alt="Community">
+        <h5 class="feature-title">Vibrant Community</h5>
+        <p class="feature-description">Connect with others shaping product experiences globally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- About ZERA Section -->
+<section class="about-section">
+    <div class="container text-center about-centered">
+      <h2 class="section-title">About ZERA</h2>
+      <p class="about-subtitle">Born from a deep desire to make user feedback more meaningful and impactful.</p>
+  
+      <p class="about-description">
+        As someone passionate about inclusive innovation, I created ZERA to bridge the gap between users and companies. I was inspired by real-life challenges faced by local entrepreneurs who often lacked direct user feedback — this project is my response. It’s also part of my <a href="https://www.alxafrica.com/" target="_blank">ALX Portfolio Project</a>, built over several weeks of ideation, coding, testing, and iteration.
+      </p>
+  
+      <p class="about-description">
+        I believe that people should be empowered to shape the products they use every day — and that their voices deserve to be heard and rewarded.
+      </p>
+  
+      <!-- Team Member Links -->
+      <div class="team-links mt-4">
+        <h5>Connect with Me</h5>
+        <ul class="social-links list-inline mt-2">
+          <li class="list-inline-item"><a href="https://www.linkedin.com/in/your-profile" target="_blank" class="social-link">LinkedIn</a></li>
+          <li class="list-inline-item"><a href="https://github.com/your-github" target="_blank" class="social-link">GitHub</a></li>
+          <li class="list-inline-item"><a href="https://twitter.com/your-twitter" target="_blank" class="social-link">Twitter</a></li>
+        </ul>
+      </div>
+  
+      <!-- GitHub Repository -->
+      <div class="repo-link mt-3">
+        <a href="https://github.com/your-github/zera-platform" target="_blank" class="btn btn-dark">View Project on GitHub</a>
       </div>
     </div>
   </section>
-
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2>About ZERA</h2>
-    <p>
-      ZERA was born from a real-world problem I observed: many local entrepreneurs struggle to gather meaningful feedback on their products. As someone passionate about inclusive innovation, I created this platform to empower people with a voice in the products they use every day.
-    </p>
-    <p>This project is part of my <a href="https://www.alxafrica.com/" target="_blank">ALX Portfolio Project</a>.</p>
-
-    <h3>Connect With Me</h3>
-    <ul class="social-links">
-      <li><a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/victorcreativee/Zera-platform" target="_blank">GitHub</a></li>
-      <li><a href="https://twitter.com/your-profile" target="_blank">Twitter</a></li>
-    </ul>
-
-    <div id="github">
-      <a href="https://github.com/victorcreativee/Zera-platform" class="btn-secondary" target="_blank">View Project on GitHub</a>
+  
+<!-- Trending Products Section -->
+<section class="trending-products py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">Trending Products</h2>
+    <div class="row">
+      {% for product in trending_products %}
+      <div class="col-md-4">
+        <div class="card product-card mb-4 shadow-sm">
+          <img src="{{ product.image_url or '/static/images/default.jpg' }}" class="product-img mb-3" alt="{{ product.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description[:100] }}...</p>
+            <p class="card-meta"><strong>{{ product.review_count }} reviews</strong></p>
+            <a href="{{ url_for('main.product_detail', product_id=product.id) }}" class="btn btn-outline-primary mt-2">View Details</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 ZERA Platform by Nyirandege Pascasie</p>
-  </footer>
-</body>
-</html>
+  </div>
+</section>
+{% endblock %}
